@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import Vue from 'vue'
+import Router from 'vue-router'
 
-Vue.use(Router);
+Vue.use(Router)
 
 const routes = [
   {
@@ -10,9 +10,16 @@ const routes = [
   },
   {
     name: 'user',
-    component: () => import('./view/user'),
+    component: () => import('./view/user/index'),
     meta: {
       title: '会员中心'
+    }
+  },
+  {
+    name: 'profile',
+    component: () => import('./view/user/profile'),
+    meta: {
+      title: '用户资料'
     }
   },
   {
@@ -29,23 +36,22 @@ const routes = [
       title: '商品详情'
     }
   }
-];
+]
 
 // add route path
 routes.forEach(route => {
-  route.path = route.path || '/' + (route.name || '');
-});
+  route.path = route.path || '/' + (route.name || '')
+})
 
-const router = new Router({ routes });
+const router = new Router({ routes })
 
+// 增加页面title
 router.beforeEach((to, from, next) => {
-  const title = to.meta && to.meta.title;
+  const title = to.meta && to.meta.title
   if (title) {
-    document.title = title;
+    document.title = title
   }
-  next();
-});
+  next()
+})
 
-export {
-  router
-};
+export { router }

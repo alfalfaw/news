@@ -1,11 +1,12 @@
 <template>
   <div>
-    <img class="user-poster" src="https://img.yzcdn.cn/public_files/2017/10/23/8690bb321356070e0b8c4404d087f8fd.png">
+    <img class="user-poster" src="https://img.yzcdn.cn/public_files/2017/10/23/8690bb321356070e0b8c4404d087f8fd.png" />
     <van-row class="user-links">
       <van-col span="6">
         <van-icon name="pending-payment" />
         待付款
       </van-col>
+
       <van-col span="6">
         <van-icon name="records" />
         待接单
@@ -28,12 +29,13 @@
       <van-cell icon="points" title="我的积分" is-link />
       <van-cell icon="gold-coin-o" title="我的优惠券" is-link />
       <van-cell icon="gift-o" title="我收到的礼物" is-link />
+      <van-cell icon="user-o" title="我的资料" is-link to="profile" />
     </van-cell-group>
   </div>
 </template>
 
 <script>
-import { Row, Col, Icon, Cell, CellGroup } from 'vant';
+import { Row, Col, Icon, Cell, CellGroup } from 'vant'
 
 export default {
   components: {
@@ -43,7 +45,7 @@ export default {
     [Cell.name]: Cell,
     [CellGroup.name]: CellGroup
   }
-};
+}
 </script>
 
 <style lang="less">

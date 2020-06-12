@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="message">
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+    </ul>
+    <form action="">
+      <input type="text" name="" id="m" />
+      <button>send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      // 建立连接，默认和当前网址连接
+      var socket = io.connect('http://localhost:3000')
+      socket.on('connection', function (data) {
+        console.log(data)
+        socket.emit('connection', { my: 'fgfj' })
+      })
+    </script>
+  </body>
+</html>
